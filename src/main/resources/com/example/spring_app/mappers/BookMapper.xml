@@ -9,7 +9,10 @@
     </resultMap>
     <!-- SQL -->
     <select id="all" resultMap="bookResultMap">
-    	SELECT * FROM books
+    	SELECT * FROM books;
+    </select>
+    <select id="show" resultMap="bookResultMap" parameterType="int">
+    	SELECT * FROM books WHERE id = #{book_id};
     </select>
     <insert id="add" parameterType="com.example.spring_app.domains.Book">
     	INSERT INTO books(title, body) VALUES (#{title}, #{body});

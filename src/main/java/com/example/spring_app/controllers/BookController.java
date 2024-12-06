@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -37,5 +38,12 @@ public class BookController {
 		List<Book> books = bookMapper.all();
 		model.addAttribute("books", books);
 		return "index";
+	}
+	
+	@GetMapping("/show/{id}")
+	public String show(@PathVariable("id") Integer book_id, Model model) {
+		Book book = bookMapper.show(book_id);
+		model.addAttribute("book", book);
+		return "show";
 	}
 }

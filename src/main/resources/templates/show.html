@@ -11,7 +11,7 @@
 		<header th:replace="~{layout :: common_header}"></header>
 		<div class="container">
 			<div class="row">
-				<h2 class="my-3">投稿一覧</h2>
+				<h2 class="my-3">投稿詳細</h2>
 			</div>
 			<div class="row">
 				<table class="table table-striped">
@@ -22,8 +22,8 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:block th:each="book : ${books}">
-							<td th:object="${book}"><a th:href="@{/show/{id}(id=*{id})}" th:text="${book.title}"></a></td>
+						<tr th:each="book : ${book}">
+							<td th:text="${book.title}"></td>
 							<td th:text="${book.body}"></td>
 						</tr>
 					</tbody>
