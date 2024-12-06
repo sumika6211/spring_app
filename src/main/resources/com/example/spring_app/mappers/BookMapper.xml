@@ -8,6 +8,9 @@
       <result property="body" column="body"/>
     </resultMap>
     <!-- SQL -->
+    <select id="all" resultMap="bookResultMap">
+    	SELECT * FROM books
+    </select>
     <insert id="add" parameterType="com.example.spring_app.domains.Book">
     	INSERT INTO books(title, body) VALUES (#{title}, #{body});
     </insert>
