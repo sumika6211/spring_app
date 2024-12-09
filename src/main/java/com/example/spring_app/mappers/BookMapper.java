@@ -11,4 +11,6 @@ public interface BookMapper {
 	List<Book> all();
 	Book show(Integer book_id);
 	void add(Book book);
+	void update(Book book);
+	void delete(Integer book_id);
 }

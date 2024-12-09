@@ -18,13 +18,21 @@
 					<thead>
 						<tr>
 							<th class="col-md-2">タイトル</th>
-							<th class="col-md-5">本文</th>
+							<th class="col-md-4">本文</th>
+							<th class="col-md-1"></th>
+							<th class="col-md-1"></th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr th:each="book : ${book}">
 							<td th:text="${book.title}"></td>
 							<td th:text="${book.body}"></td>
+							<td th:object="${book}">
+								<a th:href="@{/books/{id}/edit(id=*{id})}">編集</a>
+							</td>
+							<td>
+								<a th:href="@{/books/{id}/delete(id=*{id})}">削除</a>
+							</td>
 						</tr>
 					</tbody>
 				</table>

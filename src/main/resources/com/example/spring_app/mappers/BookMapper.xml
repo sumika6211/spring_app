@@ -17,4 +17,11 @@
     <insert id="add" parameterType="com.example.spring_app.domains.Book">
     	INSERT INTO books(title, body) VALUES (#{title}, #{body});
     </insert>
+    <update id="update" parameterType="com.example.spring_app.domains.Book">
+    	UPDATE books SET title = #{title}, body = #{body} 
+    	WHERE id = #{id};
+    </update>
+    <delete id="delete">
+    	DELETE FROM books WHERE id = #{book_id};
+    </delete>
 </mapper>
